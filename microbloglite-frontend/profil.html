@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Homepage</title>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">VibZ</div>
+    <ul>
+      <li></li>
+      <li></li>
+      <li>Profile</li>
+      <li><a class="nav-link" href="posts.html">Posts</a></li>
+      <li><button id="logout-btn">Log Out</button></li>
+    </ul>
+  </nav>
+
+  <!-- Main Layout -->
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="profile-summary">
+        <img src="https://via.placeholder.com/100" alt="User Profile Picture">
+        <h3>John Doe</h3>
+        <p>Software Developer at Tech Corp</p>
+      </div>
+      <div>
+        <h4>Trending Topics</h4>
+        <ul>
+          <li>#Tech</li>
+          <li>#Innovation</li>
+          <li>#CareerGrowth</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="input-box">
+        <textarea id="post-input" placeholder="What’s on your mind?" rows="3"></textarea>
+        <button id="post-btn">Post</button>
+      </div>
+
+      <!-- Feed will be dynamically populated here -->
+      <div id="post-container"></div>
+      
+      <!-- Post Template (Hidden) -->
+      <template id="post-template">
+        <div class="feed-item">
+          <h3 class="post-author"></h3>
+          <p class="post-body"></p>
+        </div>
+      </template>
+    </div>
+  </div>
+
+  <script src="scripts/profile.js"></script>
+
+</body>
+</html>

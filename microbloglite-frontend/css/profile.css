@@ -1,0 +1,199 @@
+
+    body {
+      margin: 0;
+      font-family: 'SF Pro', sans-serif;
+      background-color: #f8f8f8;
+      color: #1c1c1e;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #ffffff;
+      color: #1c1c1e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.8rem 2rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: 500;
+      color: #1c1c1e;
+    }
+
+    nav ul li:hover {
+      color: #007aff;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      margin: 2rem auto;
+      max-width: 1200px;
+      gap: 2rem;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e0e0;
+    }
+
+    .main-content {
+      flex: 2.5;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e0e0;
+    }
+
+    .sidebar, .main-content {
+      color: #1c1c1e;
+    }
+
+    /* Profile Summary */
+    .profile-summary {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-summary img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-summary h3 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    .profile-summary p {
+      font-size: 1rem;
+      color: #6e6e73;
+    }
+
+    /* Trending Topics */
+    .sidebar h4 {
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+      color: #1c1c1e;
+    }
+
+    .sidebar ul li {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #007aff;
+    }
+
+    .sidebar ul li:hover {
+      text-decoration: underline;
+    }
+
+    /* Feed Items */
+    .feed-item {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e0e0;
+    }
+
+    .feed-item h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #1c1c1e;
+      font-weight: 500;
+    }
+
+    .feed-item p {
+      font-size: 1rem;
+      color: #6e6e73;
+    }
+
+    /* Input Box */
+    .input-box {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e0e0e0;
+    }
+
+    .input-box textarea {
+      background: #ffffff;
+      border: 1px solid #d1d1d6;
+      border-radius: 8px;
+      padding: 0.8rem;
+      resize: none;
+      color: #1c1c1e;
+      font-family: 'SF Pro', sans-serif;
+    }
+
+    .input-box textarea::placeholder {
+      color: #c7c7cc;
+    }
+
+    .input-box button {
+      align-self: flex-end;
+      background-color: #007aff;
+      color: #ffffff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: background 0.3s ease;
+    }
+
+    .input-box button:hover {
+      background-color: #005ecb;
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .sidebar, .main-content {
+        margin-bottom: 1rem;
+      }
+    }
+  

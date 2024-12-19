@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to MinimalSpace</title>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'SF Pro', sans-serif;
+      background-color: #f8f8f8;
+      color: #1c1c1e;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background-color: #ffffff;
+      color: #1c1c1e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    nav .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      font-weight: 500;
+      color: #1c1c1e;
+    }
+
+    nav ul li:hover {
+      color: #007aff;
+    }
+
+    /* Intro Section */
+    .intro {
+      background-color: #ffffff;
+      padding: 2rem;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1c1c1e;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro p {
+      font-size: 1.2rem;
+      font-weight: 300;
+      color: #6e6e73;
+    }
+
+    /* Main Section */
+    .container {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 2rem;
+      border-radius: 12px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1c1c1e;
+      margin-bottom: 1rem;
+    }
+
+    .container p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: #6e6e73;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .button {
+      text-decoration: none;
+      background-color: #007aff;
+      color: #ffffff;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #005ecb;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: #6e6e73;
+    }
+
+    footer a {
+      color: #007aff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">VibZ</div>
+    <ul>
+      <li>About</li>
+      <li>Help</li>
+      <li>Contact</li>
+    </ul>
+  </nav>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <h1>Welcome to VibZ</h1>
+    <p>Your platform to connect, create, and thrive in the professional world.</p>
+  </section>
+
+  <!-- Main Section -->
+  <div class="container">
+    <h2>Join Us Today</h2>
+    <p>Log in to access your profile or sign up to start your journey with us.</p>
+    <div class="buttons">
+      <a href="login.html" class="button">Log In</a>
+      <a href="signup.html" class="button">Sign Up</a>
+    </div>
+    <footer>
+      <p>© 2024 VibZ | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+    </footer>
+  </div>
+
+</body>
+</html>
+/* Posts Page JavaScript */
+
+"use strict";
+const styles = {
+  postContainer: "col-md-6 mb-3",
+  card: "card",
+  cardBody: "card-body",
+  cardTitle: "card-title",
+  cardText: "card-text",
+  cardMutedText: "card-text text-muted",
+};
+
+function createPostElement(post) {
+  const postElement = document.createElement("div");
+  postElement.className = styles.postContainer;
+
+  const card = document.createElement("div");
+  card.className = styles.card;
+
+  const cardBody = document.createElement("div");
+  cardBody.className = styles.cardBody;
+
+  const title = document.createElement("h5");
+  title.className = styles.cardTitle;
+  title.textContent = post.username;
+  cardBody.appendChild(title);
+
+  const text = document.createElement("p");
+  text.className = styles.cardText;
+  text.textContent = post.text;
+  cardBody.appendChild(text);
+
+  const timestamp = document.createElement("p");
+  timestamp.className = styles.cardMutedText;
+  timestamp.textContent = new Date(post.createdAt).toLocaleString();
+  cardBody.appendChild(timestamp);
+
+  card.appendChild(cardBody);
+  postElement.appendChild(card);
+
+  return postElement;
+}
+/* Posts Page JavaScript */
+
+"use strict";
+const styles = {
+  postContainer: "col-md-6 mb-3",
+  card: "card",
+  cardBody: "card-body",
+  cardTitle: "card-title",
+  cardText: "card-text",
+  cardMutedText: "card-text text-muted",
+};
+
+function createPostElement(post) {
+  const postElement = document.createElement("div");
+  postElement.className = styles.postContainer;
+
+  const card = document.createElement("div");
+  card.className = styles.card;
+
+  const cardBody = document.createElement("div");
+  cardBody.className = styles.cardBody;
+
+  const title = document.createElement("h5");
+  title.className = styles.cardTitle;
+  title.textContent = post.username;
+  cardBody.appendChild(title);
+
+  const text = document.createElement("p");
+  text.className = styles.cardText;
+  text.textContent = post.text;
+  cardBody.appendChild(text);
+
+  const timestamp = document.createElement("p");
+  timestamp.className = styles.cardMutedText;
+  timestamp.textContent = new Date(post.createdAt).toLocaleString();
+  cardBody.appendChild(timestamp);
+
+  card.appendChild(cardBody);
+  postElement.appendChild(card);
+
+  return postElement;
+}

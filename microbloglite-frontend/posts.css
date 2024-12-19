@@ -1,1 +1,126 @@
 /* Posts Page CSS */
+body {
+    margin: 0;
+    font-family: 'SF Pro', sans-serif;
+    background-color: #f8f8f8;
+    color: #1c1c1e;
+  }
+
+  /* Navigation Bar */
+  nav {
+    background-color: #ffffff;
+    color: #1c1c1e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  nav .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  nav ul li {
+    cursor: pointer;
+    font-weight: 500;
+    color: #1c1c1e;
+  }
+
+  nav ul li:hover {
+    color: #007aff;
+  }
+
+  /* Page Container */
+  .container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: #1c1c1e;
+  }
+
+  /* Post List */
+  .post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Single Post */
+  .post {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .post:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .post-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .post-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #1c1c1e;
+    font-weight: 500;
+  }
+
+  .post-header span {
+    font-size: 0.9rem;
+    color: #6e6e73;
+  }
+
+  .post-content {
+    font-size: 1rem;
+    color: #6e6e73;
+    line-height: 1.5;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    text-align: center;
+    color: #6e6e73;
+  }
+
+  footer a {
+    color: #007aff;
+    text-decoration: none;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }

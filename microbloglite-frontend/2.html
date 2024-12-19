@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #007bff;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      width: 280px;
+      border-radius: 50px;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s;
+    }
+
+    .open-button:hover {
+      background-color: #0056b3;
+    }
+
+    /* The popup chat - hidden by default */
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 60px;
+      right: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 9;
+      width: 300px;
+      max-height: 400px;
+      background-color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      max-width: 100%;
+      padding: 20px;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Chat Header */
+    .form-container h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Chat Messages */
+    .chat-messages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      max-height: 200px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .message {
+      padding: 8px;
+      margin: 5px 0;
+      border-radius: 5px;
+      background-color: #f1f1f1;
+      max-width: 80%;
+      clear: both;
+    }
+
+    .message.user {
+      background-color: #007bff;
+      color: white;
+      float: right;
+    }
+
+    .message.bot {
+      background-color: #ddd;
+      float: left;
+    }
+
+    /* Full-width textarea */
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      resize: none;
+      min-height: 100px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .form-container textarea:focus {
+      background-color: #f0f0f0;
+      outline: none;
+    }
+
+    /* Set a style for the send button */
+    .form-container .btn {
+      background-color: #28a745;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.9;
+      font-size: 16px;
+      transition: opacity 0.3s;
+    }
+
+    .form-container .btn:hover {
+      opacity: 1;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      background-color: #dc3545;
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 600px) {
+      .open-button {
+        width: 250px;
+      }
+
+      .form-container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center; padding: 50px;">Modern Chat Popup</h2>
+
+  <button class="open-button" onclick="openForm()">Chat</button>
+
+  <div class="chat-popup" id="myForm">
+    <form class="form-container">
+      <h1>Chat</h1>
+      <div class="chat-messages" id="messagesContainer"></div>
+      <textarea placeholder="Type message.." name="msg" id="msg" required></textarea>
+      <button type="submit" class="btn" onclick="sendMessage(event)">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+
+    function sendMessage(event) {
+      event.preventDefault(); // Prevent form submission and page reload
+      
+      var msgInput = document.getElementById("msg");
+      var msgText = msgInput.value.trim();
+      
+      if (msgText === "") return; // Don't send empty messages
+
+      // Create user message element
+      var userMessage = document.createElement("div");
+      userMessage.classList.add("message", "user");
+      userMessage.textContent = msgText;
+
+      // Append user message to the message container
+      document.getElementById("messagesContainer").appendChild(userMessage);
+
+      // Scroll to the bottom of the messages container
+      var messagesContainer = document.getElementById("messagesContainer");
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Clear input field
+      msgInput.value = "";
+
+      // Simulate a bot response after a delay
+      setTimeout(function() {
+        var botMessage = document.createElement("div");
+        botMessage.classList.add("message", "bot");
+        botMessage.textContent = "Mehak: " + "Received your message!"; // A simple bot response
+        messagesContainer.appendChild(botMessage);
+        
+        // Scroll to the bottom again after bot response
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }, 1000); // Bot response after 1 second
+    }
+  </script>
+
+</body>
+</html>
